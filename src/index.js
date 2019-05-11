@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -9,6 +10,8 @@ import { startSetExpenses } from './actions/expenses';
 import { firebase } from './firebase/firebase';
 import { createBrowserHistory } from 'history';
 import { login, logout } from './actions/auth';
+import LoadingPage from './components/LoadingPage';
+
 
 const history = createBrowserHistory();
 
@@ -22,7 +25,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {

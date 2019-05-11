@@ -7,7 +7,7 @@ export const login = (uid) => ({
 
 export const logout = () => ({
     type: 'LOGOUT'
-})
+});
 
 export const startLogin = () => {
     return () => {
@@ -19,4 +19,4 @@ export const startLogout = () => {
     return () => {
         return firebase.auth().signOut();
     }
-}
+};
