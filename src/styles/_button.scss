@@ -26,6 +26,6 @@
 .button--secondary{
     background-color: #888;
       &:hover{
-        background-color: transparent;
+        background-color: lighten(#888, 7%);
     }
 }
